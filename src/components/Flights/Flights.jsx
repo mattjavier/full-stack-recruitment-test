@@ -3,12 +3,13 @@ import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
 import Itinerary from '../Itinerary';
 
+import STYLES from './Flights.scss';
+
 const getClassName = (className) => STYLES[className] || 'UNKNOWN';
 
 const Flights = () => {
   const [flightsState, setFlightsState] = useState({
-    itineraries: [],
-    legs: []
+    itineraries: []
   });
   
   useEffect(() => {
@@ -23,8 +24,7 @@ const Flights = () => {
         console.log(data);
         setFlightsState({
           ...flightsState,
-          itineraries: data.itineraries,
-          legs: data.legs
+          itineraries: data.itineraries
         });
       })
       .catch(err => console.log(err));
@@ -37,6 +37,7 @@ const Flights = () => {
           return (
             <Itinerary 
               key={itinerary.id}
+              itinerary={itinerary}
             />
           )
         })

@@ -1,9 +1,7 @@
 @import '~bpk-mixins';
 
-.App {
+.Container {
+  display: flex;
+  padding: $bpk-spacing-sm;
   background-color: $bpk-background-secondary-light-color;
-  
-  &__main {
-    padding: $bpk-spacing-sm;
-  }
 }
