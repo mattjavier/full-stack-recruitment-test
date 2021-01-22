@@ -2,13 +2,17 @@
 
 .Flight {
   display: flex;
-  // padding-bottom: $bpk-spacing-sm;
   justify-content: space-between;
   align-items: flex-start;
 
   &__left {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    padding-right: 20px;
   }
 
   &__right {
@@ -37,5 +41,6 @@
 
   &__airline-logo {
     height: $bpk-spacing-lg;
+    padding-right: 20px;
   }
 }

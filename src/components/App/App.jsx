@@ -17,9 +17,6 @@ const App = () => (
       {/* TODO: Add a component to display results here */}
       {/* List of Flights */}
       <Flights />
-      {/* each Card will be an itinerary  */}
-      {/* each itinerary will have a 2 Legs */}
-      {/* each Leg is a Flight */}
     </main>
   </div>
 );

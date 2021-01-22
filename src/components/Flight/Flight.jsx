@@ -1,5 +1,6 @@
 import React from 'react';
 import BpkText from 'bpk-component-text';
+import BpkSmallFlightIcon from 'bpk-component-icon/sm/flight';
 
 import Time from '../Time';
 
@@ -24,11 +25,13 @@ const Flight = props => {
   return (
     <div className={getClassName('Flight')}>
       <div className={getClassName('Flight__left')}>
+        {/* Airline Logo */}
         <img 
           src={`https://logos.skyscnr.com/images/airlines/favicon/${props.flight.airline_id}.png`} 
           alt="Airline Logo"
           className={getClassName('Flight__airline-logo')}
         />
+        
         {/* Departure */}
         <Time 
           info={{ 
@@ -36,6 +39,11 @@ const Flight = props => {
             time: props.flight.departure_time
           }}
         />
+
+        {/* Flight Icon  */}
+        <div className={getClassName('Flight__icon')}>
+          <BpkSmallFlightIcon className="abc-icon__flight"/>
+        </div>
 
         {/* Arrival */}
         <Time 
@@ -46,9 +54,12 @@ const Flight = props => {
         />
       </div>
       <div className={getClassName('Flight__right')}>
+        {/* Flight Duration */}
         <p className={getClassName('Flight__duration-hours')}>
           {`${hours(props.flight.duration_mins)}h ${minutes(props.flight.duration_mins)}`}
         </p>
+        
+        {/* Potential Stops */}
         {
           props.flight.stops > 0 ? (
             <p className={getClassName('Flight__red')}>

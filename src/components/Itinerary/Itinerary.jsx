@@ -18,20 +18,27 @@ const Itinerary = props => {
   return (
     <BpkCard className={getClassName('Itinerary')}>
       <div className={getClassName('Itinerary__top')}>
+        {/* Leg 1 */}
         <Leg 
           leg={props.itinerary.legs[0]}
-          />
+        />
+
+        {/* Leg 2 */}
         <Leg
           leg={props.itinerary.legs[1]}
         />
       </div>
       <div className={getClassName('Itinerary__bottom')}>
+
+        {/* Flight Price */}
         <BpkText 
           tagName="p"
           className={getClassName('Itinerary__price')}
         >
           {props.itinerary.price}
         </BpkText>
+
+        {/* Flight Agent and Rating */}
         <BpkText 
           tagName="p"
           className={getClassName('Itinerary__agent')}
