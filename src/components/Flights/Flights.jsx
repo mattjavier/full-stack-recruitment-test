@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import BpkMobileScrollContainer from 'bpk-component-mobile-scroll-container';
 
 import Itinerary from '../Itinerary';
 
@@ -20,18 +19,14 @@ const Flights = () => {
       }
     })
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        setFlightsState({
-          ...flightsState,
-          itineraries: data.itineraries
-        });
+      .then(({ itineraries })=> {
+        setFlightsState({ ...flightsState, itineraries });
       })
       .catch(err => console.log(err));
-  }, [])
+  }, []);
 
   return (
-    <BpkMobileScrollContainer className={getClassName('Container')}>
+    <div className={getClassName('Container')}>
       {
         flightsState.itineraries.map(itinerary => {
           return (
@@ -39,10 +34,10 @@ const Flights = () => {
               key={itinerary.id}
               itinerary={itinerary}
             />
-          )
+          );
         })
       }
-    </BpkMobileScrollContainer>
+    </div>
   );
 }
 

@@ -1,11 +1,21 @@
 @import '~bpk-mixins';
 
 .Itinerary {
+  width: 100%;
   display: flex;
   align-items: flex-start;
+  flex-direction: column;
   padding: $bpk-spacing-sm;
   margin-bottom: $bpk-spacing-md;
   background-color: $bpk-background-light-color;
+
+  &__top {
+
+  }
+
+  &__bottom {
+
+  }
 
   &__price {
     font-size: $bpk-h-3-font-size;

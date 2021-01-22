@@ -13,12 +13,12 @@ const Itinerary = props => {
   return (
     <BpkCard className={getClassName('Itinerary')}>
       <div className={getClassName('Itinerary__top')}>
-        {/* <Leg 
+        <Leg 
           leg={props.itinerary.legs[0]}
           />
         <Leg
           leg={props.itinerary.legs[1]}
-        /> */}
+        />
       </div>
       <div className={getClassName('Itinerary__bottom')}>
         <div>
@@ -37,7 +37,7 @@ const Itinerary = props => {
         </div>
       </div>
     </BpkCard>
-  )
+  );
 }
 
 export default Itinerary;
