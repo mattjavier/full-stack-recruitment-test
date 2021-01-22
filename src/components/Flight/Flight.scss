@@ -1,0 +1,37 @@
+@import '~bpk-mixins';
+
+.Flight {
+  display: flex;
+  padding-bottom: $bpk-spacing-sm;
+  justify-content: space-between;
+  align-items: center;
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    font-size: 13px;
+  }
+
+  &__duration-hours {
+    color: $bpk-color-sky-gray-tint-03;
+  }
+
+  &__red {
+    color: $bpk-color-panjin;
+  }
+  
+  &__green {
+    color: $bpk-color-monteverde;
+  }
+
+  &__airline-logo {
+    height: $bpk-spacing-base;
+  }
+}
