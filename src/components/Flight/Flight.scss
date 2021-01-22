@@ -2,9 +2,9 @@
 
 .Flight {
   display: flex;
-  padding-bottom: $bpk-spacing-sm;
+  // padding-bottom: $bpk-spacing-sm;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 
   &__left {
     display: flex;
@@ -15,8 +15,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: center;
     font-size: 13px;
+  }
+
+  &__right p {
+    margin: 5px;
   }
 
   &__duration-hours {
@@ -32,6 +36,6 @@
   }
 
   &__airline-logo {
-    height: $bpk-spacing-base;
+    height: $bpk-spacing-lg;
   }
 }

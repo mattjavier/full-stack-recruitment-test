@@ -40,11 +40,10 @@ const Leg = props => {
   }, []);
 
   return (
-    <div>
-      <Flight
-        flight={legState.leg} 
-      />
-    </div>
+    <Flight
+      flight={legState.leg}
+      className={getClassName('Leg')} 
+    />
   );
 }
 
