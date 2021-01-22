@@ -8,6 +8,11 @@ import STYLES from './Itinerary.scss';
 
 const getClassName = (className) => STYLES[className] || 'UNKNOWN';
 
+const formatString = numStr => {
+  let num = parseFloat(numStr).toFixed(1);
+  return num.toString();
+}
+
 const Itinerary = props => {
 
   return (
@@ -21,20 +26,21 @@ const Itinerary = props => {
         />
       </div>
       <div className={getClassName('Itinerary__bottom')}>
-        <div>
-          <BpkText 
-            tagName="p"
-            className={getClassName('Itinerary__price')}
-          >
-            {props.itinerary.price}
-          </BpkText>
-          <BpkText 
-            tagName="p"
-            className={getClassName('Itinerary__agent')}
-          >
-            {props.itinerary.agent}
-          </BpkText>
-        </div>
+        <BpkText 
+          tagName="p"
+          className={getClassName('Itinerary__price')}
+        >
+          {props.itinerary.price}
+        </BpkText>
+        <BpkText 
+          tagName="p"
+          className={getClassName('Itinerary__agent')}
+        >
+          {props.itinerary.agent}
+          <span className={getClassName('Itinerary__agent-rating')}>
+            &nbsp;({formatString(props.itinerary.agent_rating)})
+          </span>
+        </BpkText>
       </div>
     </BpkCard>
   );
