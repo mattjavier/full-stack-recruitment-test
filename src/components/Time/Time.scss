@@ -1,0 +1,15 @@
+@import '~bpk-mixins';
+
+.Time {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__time {
+    color: $bpk-color-sky-gray;
+  }
+
+  &__airport {
+    color: $bpk-color-sky-gray-tint-03;
+  }
+}

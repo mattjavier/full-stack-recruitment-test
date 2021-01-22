@@ -1,8 +1,7 @@
 import React from 'react';
 import BpkText from 'bpk-component-text';
 
-//import Departure from '../Departure';
-// import Arrival from '../Arrival';
+import Time from '../Time';
 
 import STYLES from './Flight.scss';
 
@@ -22,16 +21,6 @@ const minutes = mins => {
 
 const Flight = props => {
 
-  const dep = {
-    departure_airport: props.flight.departure_airport,
-    departure_time: props.flight.departure_time
-  }
-
-  const arr = {
-    arrival_airport: props.flight.arrival_airport,
-    arrival_time: props.flight.arrival_time
-  }
-
   return (
     <div className={getClassName('Flight')}>
       <div className={getClassName('Flight__left')}>
@@ -40,9 +29,21 @@ const Flight = props => {
           alt="Airline Logo"
           className={getClassName('Flight__airline-logo')}
         />
-        {/* <Departure />
+        {/* Departure */}
+        <Time 
+          info={{ 
+            airport: props.flight.departure_airport, 
+            time: props.flight.departure_time
+          }}
+        />
 
-        <Arrival /> */}
+        {/* Arrival */}
+        <Time 
+          info={{ 
+            airport: props.flight.arrival_airport, 
+            time: props.flight.arrival_time
+          }}
+        />
       </div>
       <div className={getClassName('Flight__right')}>
         <p className={getClassName('Flight__duration-hours')}>
